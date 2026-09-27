@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P. Poojitha | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0f1f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 15, 31, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #24304d;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #4fd1ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4fd1ff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background:
+                radial-gradient(circle at top right, #163b68, transparent 35%),
+                radial-gradient(circle at bottom left, #24165c, transparent 35%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .profile-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #4fd1ff, #7c4dff);
+            box-shadow: 0 0 40px rgba(79, 209, 255, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #4fd1ff;
+        }
+
+        .hero h2 {
+            color: #cbd5e1;
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #aebbd0;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 28px;
+            border-radius: 30px;
+            background: #4fd1ff;
+            color: #07101e;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(79, 209, 255, 0.6);
+        }
+
+        /* Sections */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #4fd1ff;
+        }
+
+        /* About */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #b7c2d4;
+            font-size: 18px;
+        }
+
+        /* Education */
+        .education-card {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            background: #111a2e;
+            border: 1px solid #263653;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: #4fd1ff;
+        }
+
+        .education-card h3 {
+            color: #4fd1ff;
+            font-size: 23px;
+        }
+
+        .education-card p {
+            color: #b7c2d4;
+            margin-top: 8px;
+        }
+
+        /* Skills */
+        .skills-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 25px 15px;
+            text-align: center;
+            background: #111a2e;
+            border-radius: 15px;
+            border: 1px solid #263653;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: #4fd1ff;
+            box-shadow: 0 0 20px rgba(79, 209, 255, 0.15);
+        }
+
+        .skill h3 {
+            color: #ffffff;
+        }
+
+        .skill p {
+            color: #8fa2bd;
+            margin-top: 5px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .project {
+            background: #111a2e;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #263653;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #4fd1ff;
+        }
+
+        .project h3 {
+            color: #4fd1ff;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #aebbd0;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            padding: 35px;
+            background: #111a2e;
+            border-radius: 20px;
+            border: 1px solid #263653;
+        }
+
+        .contact-box p {
+            color: #b7c2d4;
+            margin: 10px 0;
+        }
+
+        .contact-box strong {
+            color: #4fd1ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #060a14;
+            color: #718096;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">P.Poojitha</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="profile-circle">
+                PP
+            </div>
+
+            <h1>Hello, I'm <span>P. Poojitha</span></h1>
+
+            <h2>Student | Aspiring Web Developer</h2>
+
+            <p>
+                Welcome to my professional portfolio.
+                I am a student passionate about technology,
+                programming and web development.
+            </p>
+
+            <a href="#about" class="btn">Explore My Portfolio</a>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about">
+            <p>
+                I am P. Poojitha, from Kakinada.
+                I am currently pursuing my engineering studies at
+                Sir C R Reddy College of Engineering.
+                I am interested in learning programming,
+                web development and modern technologies.
+                My goal is to continuously improve my technical
+                skills and build useful and creative projects.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+
+        <div class="education-card">
+            <h3>Sir C R Reddy College of Engineering</h3>
+            <p>Engineering Student</p>
+            <p>Location: Andhra Pradesh, India</p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Web Structure</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Web Designing</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Web Interaction</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>Java</h3>
+                <p>Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>SQL</h3>
+                <p>Database</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>
+                    A responsive personal portfolio website
+                    created using HTML and CSS.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Birthday Greeting Website</h3>
+                <p>
+                    A creative birthday greeting webpage
+                    with animations, balloons and lighting effects.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Python Programs</h3>
+                <p>
+                    Collection of basic Python programs
+                    created to practice programming concepts.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <div class="contact-box">
+            <p><strong>Name:</strong> P. Poojitha</p>
+            <p><strong>Location:</strong> Kakinada, Andhra Pradesh</p>
+            <p><strong>College:</strong> Sir C R Reddy College of Engineering</p>
+
+            <a href="mailto:your-email@example.com" class="btn">
+                Send Me an Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 P. Poojitha | Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
